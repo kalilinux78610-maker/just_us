@@ -1,0 +1,22 @@
+Analyzing just app...                                           
+
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\core\theme\app_theme.dart:24:9 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\core\theme\app_theme.dart:88:26 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\core\theme\app_theme.dart:92:26 - deprecated_member_use
+  error - The argument type 'UserProgressNotifier Function(dynamic)' can't be assigned to the parameter type 'UserProgressNotifier Function()'.  - lib\data\providers\user_progress_provider.dart:5:58 - argument_type_not_assignable
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\bucket_list\bucket_list_screen.dart:32:54 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\home\home_screen.dart:102:41 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\home\home_screen.dart:135:63 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\home\home_screen.dart:139:43 - deprecated_member_use
+   info - Statements in an if should be enclosed in a block - lib\features\quiz\quiz_screen.dart:70:7 - curly_braces_in_flow_control_structures
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\quiz\quiz_screen.dart:143:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\quiz\quiz_screen.dart:171:62 - deprecated_member_use
+   info - 'activeColor' is deprecated and shouldn't be used. Use activeThumbColor instead. This feature was deprecated after v3.31.0-2.0.pre - lib\features\settings\settings_screen.dart:23:15 - deprecated_member_use
+   info - 'activeColor' is deprecated and shouldn't be used. Use activeThumbColor instead. This feature was deprecated after v3.31.0-2.0.pre - lib\features\settings\settings_screen.dart:37:15 - deprecated_member_use
+warning - Unused import: 'package:lottie/lottie.dart' - lib\features\splash\splash_screen.dart:3:8 - unused_import
+warning - The value of the field '_selectedCategory' isn't used - lib\features\truth_or_dare\truth_or_dare_screen.dart:18:16 - unused_field
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\truth_or_dare\truth_or_dare_screen.dart:235:39 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\truth_or_dare\truth_or_dare_screen.dart:241:61 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\truth_or_dare\truth_or_dare_screen.dart:248:39 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\truth_or_dare\truth_or_dare_screen.dart:269:39 - deprecated_member_use
+

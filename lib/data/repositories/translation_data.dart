@@ -1,0 +1,57 @@
+class TranslationData {
+  static Map<String, Map<String, String>> translations = {
+    'en': {
+      'app_title': 'Just Us',
+      'beyond_words': 'BEYOND WORDS',
+      'spicy_dares': 'SPICY DARES',
+      'tap_to_ignite': 'Tap to ignite the night',
+      'dare_accepted': 'DARE ACCEPTED',
+      'swipe_to_swap': 'SWIPE TO SWAP',
+      'double_tap_to_finish': 'DOUBLE TAP TO FINISH',
+      'challenge_completed': 'Challenge completed! +10 Hearts 💕',
+      'all': 'ALL',
+      'spicy': 'SPICY',
+      'kiss': 'KISS',
+      'intimate': 'INTIMATE',
+      'settings': 'Settings',
+      'language': 'Language',
+      'stickers': 'Stickers',
+      'progress': 'Progress',
+      'memory_made': 'Woohoo! Another memory made 💕',
+      'positions': 'POSITIONS',
+      'generate_position': 'GENERATE POSITION',
+      'tap_to_generate': 'Tap to find a new position',
+    },
+    'hi': {
+      'app_title': 'Just Us',
+      'beyond_words': 'BAATON SE PARE',
+      'spicy_dares': 'Spicy Dares 🔥',
+      'tap_to_ignite': 'Raat rangeen karne ke liye tap karein',
+      'dare_accepted': 'DARE ACCEPTED 😈',
+      'swipe_to_swap': 'Badalne ke liye swipe karein',
+      'double_tap_to_finish': 'Khatam karne ke liye double tap',
+      'challenge_completed': 'Challenge poora hua! +10 Hearts 💕',
+      'all': 'SABHI',
+      'spicy': 'SPICY',
+      'kiss': 'KISS',
+      'intimate': 'INTIMATE',
+      'settings': 'Settings',
+      'language': 'Language',
+      'sound_effects': 'Sound Effects',
+      'allow_spicy': 'Allow Spicy Content (18+)',
+      'allow_spicy_sub': 'Enables explicit questions and dares.',
+      'reset_progress': 'Reset Progress',
+      'reset_progress_sub': 'Clear score, streak, and bucket list.',
+      'stickers': 'Stickers',
+      'progress': 'Progress',
+      'memory_made': 'Woohoo! Ek aur yaad ban gayi 💕',
+      'positions': 'POSITIONS',
+      'generate_position': 'GENERATE POSITION',
+      'tap_to_generate': 'Nayi position dhoondhne ke liye tap karein',
+    },
+  };
+
+  static String translate(String key, String locale) {
+    return translations[locale]?[key] ?? key;
+  }
+}
