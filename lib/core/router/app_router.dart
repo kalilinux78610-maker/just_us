@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import '../../data/models/truth_or_dare_item.dart';
 import '../../features/splash/splash_screen.dart';
 import '../../features/home/home_screen.dart';
 import '../../features/truth_or_dare/truth_or_dare_screen.dart';
@@ -19,7 +20,20 @@ final GoRouter appRouter = GoRouter(
       routes: [
         GoRoute(
           path: 'truth-or-dare',
-          builder: (context, state) => const TruthOrDareScreen(),
+          builder: (context, state) {
+            final categoryName = state.uri.queryParameters['category'];
+            TodCategory? category;
+            if (categoryName != null) {
+              try {
+                category = TodCategory.values.firstWhere(
+                  (e) => e.name == categoryName,
+                );
+              } catch (_) {
+                category = null;
+              }
+            }
+            return TruthOrDareScreen(initialCategory: category);
+          },
         ),
         GoRoute(
           path: 'dare-browser',

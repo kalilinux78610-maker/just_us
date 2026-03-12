@@ -6,6 +6,7 @@ enum TodCategory {
   kissing,
   intimate,
   immersive,
+  stickerDare,
 }
 
 class TruthOrDareItem {
@@ -13,6 +14,7 @@ class TruthOrDareItem {
   final TodCategory category;
   final String content;
   final String? imageUrl;
+  final String? lottiePath;
   final String? hindiContent;
 
   const TruthOrDareItem({
@@ -20,6 +22,7 @@ class TruthOrDareItem {
     required this.category,
     required this.content,
     this.imageUrl,
+    this.lottiePath,
     this.hindiContent,
   });
 }

@@ -21,6 +21,8 @@ class TranslationData {
       'positions': 'POSITIONS',
       'generate_position': 'GENERATE POSITION',
       'tap_to_generate': 'Tap to find a new position',
+      'sticker_dares': 'STICKER DARES',
+      'tap_to_see_stickers': 'Tap to see sticker dares',
     },
     'hi': {
       'app_title': 'Just Us',
@@ -48,6 +50,8 @@ class TranslationData {
       'positions': 'POSITIONS',
       'generate_position': 'GENERATE POSITION',
       'tap_to_generate': 'Nayi position dhoondhne ke liye tap karein',
+      'sticker_dares': 'STICKER DARES',
+      'tap_to_see_stickers': 'Sticker dares dekhne ke liye tap karein',
     },
   };
 

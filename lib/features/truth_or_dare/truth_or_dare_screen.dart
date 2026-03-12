@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
 import '../../core/theme/app_theme.dart';
 import '../../data/models/truth_or_dare_item.dart';
 import '../../data/repositories/truth_or_dare_data.dart';
@@ -11,7 +12,8 @@ import '../../data/providers/locale_provider.dart';
 import '../../data/repositories/translation_data.dart';
 
 class TruthOrDareScreen extends ConsumerStatefulWidget {
-  const TruthOrDareScreen({super.key});
+  final TodCategory? initialCategory;
+  const TruthOrDareScreen({super.key, this.initialCategory});
 
   @override
   ConsumerState<TruthOrDareScreen> createState() => _TruthOrDareScreenState();
@@ -26,6 +28,7 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
   @override
   void initState() {
     super.initState();
+    _selectedCategory = widget.initialCategory;
     _loadDares();
   }
 
@@ -132,6 +135,11 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
                     isSelected: _selectedCategory == TodCategory.immersive,
                     onTap: () => _switchCategory(TodCategory.immersive),
                   ),
+                  _CategoryChip(
+                    label: TranslationData.translate('stickers', lang),
+                    isSelected: _selectedCategory == TodCategory.stickerDare,
+                    onTap: () => _switchCategory(TodCategory.stickerDare),
+                  ),
                 ],
               ),
             ),
@@ -233,13 +241,49 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              if (item.imageUrl != null)
+              if (item.lottiePath != null)
+                Container(
+                  height: 240,
+                  width: double.infinity,
+                  child: Lottie.asset(
+                    item.lottiePath!,
+                    fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Container(
+                        color: AppTheme.cardPurple.withValues(alpha: 0.3),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.animation_rounded,
+                              color:
+                                  AppTheme.primaryPink.withValues(alpha: 0.5),
+                              size: 48,
+                            ),
+                            const SizedBox(height: 12),
+                            const Text(
+                              'ANIMATION ERROR',
+                              style: TextStyle(
+                                color: Colors.white24,
+                                letterSpacing: 2,
+                                fontSize: 10,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                )
+              else if (item.imageUrl != null)
                 Container(
                   height: 240,
                   width: double.infinity,
                   child: Image.asset(
                     item.imageUrl!,
-                    fit: BoxFit.cover,
+                    fit: item.imageUrl!.contains('stickers/')
+                        ? BoxFit.contain
+                        : BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
                         color: AppTheme.cardPurple.withValues(alpha: 0.3),
