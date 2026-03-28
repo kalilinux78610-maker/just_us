@@ -19,7 +19,7 @@ class MultiplayerService {
       final userCredential = await _auth.signInAnonymously();
       return userCredential.user;
     } catch (e) {
-      print("Error signing in anonymously: $e");
+      // Log error (consider using a proper logger)
       return null;
     }
   }

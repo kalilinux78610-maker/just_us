@@ -27,7 +27,7 @@ class DareBrowserScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '${(index + 1).toString().padLeft(2, '0')}',
+                    (index + 1).toString().padLeft(2, '0'),
                     style: TextStyle(
                       color: AppTheme.primaryPink.withValues(alpha: 0.5),
                       fontSize: 14,

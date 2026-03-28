@@ -48,7 +48,7 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
       }).toList()..shuffle(_random);
 
       // Reset page controller if it's already initialized
-      if (this.mounted && _pageController.hasClients) {
+      if (mounted && _pageController.hasClients) {
         _pageController.jumpToPage(0);
       }
     });
@@ -260,7 +260,7 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
             mainAxisSize: MainAxisSize.min,
             children: [
               if (item.lottiePath != null)
-                Container(
+                SizedBox(
                   height: 240,
                   width: double.infinity,
                   child: Lottie.asset(
@@ -294,7 +294,7 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
                   ),
                 )
               else if (item.imageUrl != null)
-                Container(
+                SizedBox(
                   height: 240,
                   width: double.infinity,
                   child: Image.asset(
