@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1011057604731",
+    "project_id": "justus-c98bf",
+    "storage_bucket": "justus-c98bf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011057604731:android:30dfcc68db7fd5e6610ade",
+        "android_client_info": {
+          "package_name": "com.antigravity.justus.just_us"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdYD38dwm7Javabp3HE0EyTfs-QpJobBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
