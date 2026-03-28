@@ -16,18 +16,41 @@ class _MultiplayerLobbyScreenState extends ConsumerState<MultiplayerLobbyScreen>
   final _codeController = TextEditingController();
   bool _isLoading = false;
 
+  @override
+  void initState() {
+    super.initState();
+    // Pre-warm Firebase Auth to make the room creation process instantaneous
+    _prewarmAuth();
+  }
+
+  void _prewarmAuth() {
+    ref.read(multiplayerServiceProvider).signInAnonymously();
+  }
+
   Future<void> _hostRoom() async {
+    final customCode = _codeController.text.trim();
+    
     setState(() => _isLoading = true);
     final service = ref.read(multiplayerServiceProvider);
-    final roomCode = await service.createRoom();
     
-    if (mounted) {
-      setState(() => _isLoading = false);
-      if (roomCode != null) {
-        context.push('/chat/$roomCode');
-      } else {
+    try {
+      final roomCode = await service.createRoom(customCode: customCode);
+      
+      if (mounted) {
+        setState(() => _isLoading = false);
+        if (roomCode != null) {
+          context.push('/chat/$roomCode');
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Failed to create a room.')),
+          );
+        }
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() => _isLoading = false);
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Failed to create a room. Check connection.')),
+          SnackBar(content: Text(e.toString().replaceAll('Exception: ', ''))),
         );
       }
     }
@@ -100,20 +123,24 @@ class _MultiplayerLobbyScreenState extends ConsumerState<MultiplayerLobbyScreen>
                     ),
                     child: const Text('HOST A ROOM', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   ),
+                  const SizedBox(height: 12),
+                  const Text(
+                    '(Optional: Type a name above for a custom room)',
+                    style: TextStyle(color: Colors.white38, fontSize: 12),
+                  ),
                   const SizedBox(height: 32),
-                  const Text('OR JOIN ROOM', style: TextStyle(color: Colors.white54, fontWeight: FontWeight.bold)),
+                  const Text('YOUR ROOM CODE', style: TextStyle(color: Colors.white54, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 16),
                   TextField(
                     controller: _codeController,
                     textAlign: TextAlign.center,
                     textCapitalization: TextCapitalization.characters,
-                    maxLength: 6,
-                    style: const TextStyle(fontSize: 24, letterSpacing: 8, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 24, letterSpacing: 4, fontWeight: FontWeight.bold),
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white10,
                       counterText: '',
-                      hintText: '6-DIGIT CODE',
+                      hintText: 'e.g. MYLOVE1',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16),
                         borderSide: BorderSide.none,

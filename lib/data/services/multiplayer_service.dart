@@ -24,12 +24,22 @@ class MultiplayerService {
     }
   }
 
-  // Create a new room and return its 6-digit code
-  Future<String?> createRoom() async {
+  // Create a new room and return its code (random or custom)
+  Future<String?> createRoom({String? customCode}) async {
     final user = await signInAnonymously();
     if (user == null) return null;
 
-    final roomCode = _generateRoomCode();
+    final roomCode = (customCode != null && customCode.isNotEmpty) 
+        ? customCode.toUpperCase() 
+        : _generateRoomCode();
+        
+    // Check if room already exists and is active
+    final existing = await _firestore.collection('rooms').doc(roomCode).get();
+    if (existing.exists && (existing.data()?['isActive'] ?? false)) {
+      // If custom code is taken, return null to show error (or handle differently)
+      if (customCode != null) throw Exception('Room code already in use');
+    }
+
     await _firestore.collection('rooms').doc(roomCode).set({
       'hostId': user.uid,
       'createdAt': FieldValue.serverTimestamp(),
