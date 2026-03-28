@@ -39,7 +39,8 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
           return i.category == TodCategory.spicyDare ||
               i.category == TodCategory.kissing ||
               i.category == TodCategory.intimate ||
-              i.category == TodCategory.immersive;
+              i.category == TodCategory.immersive ||
+              i.category == TodCategory.longDistance;
         }
         return i.category == _selectedCategory;
       }).toList()..shuffle(_random);
@@ -139,6 +140,11 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
                     label: TranslationData.translate('stickers', lang),
                     isSelected: _selectedCategory == TodCategory.stickerDare,
                     onTap: () => _switchCategory(TodCategory.stickerDare),
+                  ),
+                  _CategoryChip(
+                    label: TranslationData.translate('long_distance', lang),
+                    isSelected: _selectedCategory == TodCategory.longDistance,
+                    onTap: () => _switchCategory(TodCategory.longDistance),
                   ),
                 ],
               ),

@@ -3619,5 +3619,96 @@ class TruthOrDareData {
       hindiContent:
           'Slow full-body wave: Kisi bhi aligned position mein — face-to-face ya spooned. Wave crown se shuru hoti hai: shoulders pehle forward roll karenge, phir chest press, stomach slide, hips lift, thighs tensing, calves flexing, toes curling. Phir wave reverse hogi: toes pehle uncurl honge, calves relax, thighs soften, hips settle, stomach release, chest ease, shoulders drop. Har full pass liquid heat ki tarah feel hoga jo body chain mein travel karega — skin sequence mein garam hogi, tremors ripples ki tarah follow karenge. Sweat contact line par jama hoga, wave ko smooth current bana dega. Saansein rhythm se match hongi aur dil slow heavy sync mein dhadkenge.',
     ),
+    // --- LONG DISTANCE / ONLINE DARES ---
+    TruthOrDareItem(
+      id: 'ldr_1',
+      category: TodCategory.longDistance,
+      content: "Text me step-by-step everything you're currently wearing... and then text me exactly what you are taking off right now.",
+      hindiContent: "Mujhe step-by-step text karo ki tumne abhi kya pehna hai... aur phir text karo ki tum abhi kya utaar rahe ho.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_2',
+      category: TodCategory.longDistance,
+      content: "Send me a 3-second disappearing video of your tongue slowly licking your lips while looking right at the camera.",
+      hindiContent: "Camera mein dekhte hue apne hothon ko slowly chaatne ka 3-second ka disappearing video bhejo.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_3',
+      category: TodCategory.longDistance,
+      content: "Write me a short, highly-detailed paragraph about the exact spot you wish my hands were on right now and how it would feel.",
+      hindiContent: "Ek short, detailed paragraph likho ki tum abhi mere haath kahan mehsoos karna chahte ho aur kaisa lagta.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_4',
+      category: TodCategory.longDistance,
+      content: "Text me the most inappropriate thought you’ve had about me today. No holding back.",
+      hindiContent: "Aaj mere baare mein socha gaya sabse inappropriate thought mujhe text karo. Kuch mat chupana.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_5',
+      category: TodCategory.longDistance,
+      content: "Send me a photo that shows just one inch of bare skin that normally wouldn't be visible.",
+      hindiContent: "Ek aisi photo bhejo jisme sirf ek inch bare skin dikhe jo normally nahi dikhti.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_6',
+      category: TodCategory.longDistance,
+      content: "Go into your bathroom, fog up the mirror with hot water, write a dirty message for me on it, and send a picture.",
+      hindiContent: "Bathroom jao, mirror par hot water fog banao, mere liye ek dirty message likho, aur uski photo bhejo.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_7',
+      category: TodCategory.longDistance,
+      content: "Describe, using only words (no emojis), what you would do to me if I were tied to a chair right in front of you.",
+      hindiContent: "Sirf words use karke describe karo ki agar main tumhare aage ek chair se bandha hota toh tum kya karte.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_8',
+      category: TodCategory.longDistance,
+      content: "Take a photo of your bed right now and tell me exactly where I would be pinned down if I were there.",
+      hindiContent: "Apne bed ki photo lo aur batao main wahan hota toh kahan pinned down hota.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_9',
+      category: TodCategory.longDistance,
+      content: "Wear an oversized shirt, unbuttoned just enough to tease, and send a selfie biting your lower lip.",
+      hindiContent: "Ek oversized shirt pehno, halka sa unbutton karke tease karte hue, aur thoda sa lower lip bite karte hue ek selfie bhejo.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_10',
+      category: TodCategory.longDistance,
+      content: "Name a specific piece of clothing you want me to wear the next time we meet, and secretly tell me what you plan to do once I'm wearing it.",
+      hindiContent: "Koi ek kapda batao jo tum chahte ho main agli meeting mein pehnu, aur phir secretively batao hum uske baad kya karenge.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_11',
+      category: TodCategory.longDistance,
+      content: "Send a picture of your thighs slightly pressed together with a caption about exactly what you're imagining right now.",
+      hindiContent: "Apni thighs lightly pressed karke ek photo bhejo aur caption mein likho ki tum kya soch rahe ho.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_12',
+      category: TodCategory.longDistance,
+      content: "Truth or Text: Admit your deepest hidden turn-on via text, or else you have to send me a risky photo.",
+      hindiContent: "Truth or text: Apna deepest turn-on text karo, varna mujhe ek risky photo bhejne ki saza milegi.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_13',
+      category: TodCategory.longDistance,
+      content: "Describe the exact temperature and feeling of my skin against yours right now. Paint the picture for me.",
+      hindiContent: "Meri skin tumhari skin pe kaisi lagegi right now, is feeling aur temperature ko words mein paint karo.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_14',
+      category: TodCategory.longDistance,
+      content: "Send a photo of your hand gripping something tightly (the bedsheets, your own clothing, or a pillow) to show me how frustrated you are that I'm not there.",
+      hindiContent: "Kisi cheez ko tightly pakde hue ek photo bhejo (bedsheets, pillow ya kapde) yeh dikhane ke liye ki tum kitna frustrated ho.",
+    ),
+    TruthOrDareItem(
+      id: 'ldr_15',
+      category: TodCategory.longDistance,
+      content: "Type out the exact sound you’d make if I started kissing my way down your stomach.",
+      hindiContent: "Type karke batana ki agar main tumhare stomach ko kiss karna start karun, toh tum aawaz kaise nikaloge.",
+    ),
   ];
 }
