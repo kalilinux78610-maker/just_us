@@ -9,6 +9,8 @@ import '../../features/bucket_list/bucket_list_screen.dart';
 import '../../features/settings/settings_screen.dart';
 import '../../features/truth_or_dare/dare_browser_screen.dart';
 import '../../features/truth_or_dare/position_generator_screen.dart';
+import '../../features/multiplayer/multiplayer_lobby_screen.dart';
+import '../../features/multiplayer/chat_and_play_screen.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/splash',
@@ -55,6 +57,17 @@ final GoRouter appRouter = GoRouter(
         GoRoute(
           path: 'position-generator',
           builder: (context, state) => const PositionGeneratorScreen(),
+        ),
+        GoRoute(
+          path: 'multiplayer',
+          builder: (context, state) => const MultiplayerLobbyScreen(),
+        ),
+        GoRoute(
+          path: 'chat/:code',
+          builder: (context, state) {
+            final code = state.pathParameters['code']!;
+            return ChatAndPlayScreen(roomCode: code);
+          },
         ),
       ],
     ),
