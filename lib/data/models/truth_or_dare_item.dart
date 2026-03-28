@@ -8,6 +8,8 @@ enum TodCategory {
   immersive,
   stickerDare,
   longDistance,
+  inPerson,
+  truth,
 }
 
 class TruthOrDareItem {

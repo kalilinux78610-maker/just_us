@@ -40,6 +40,8 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
               i.category == TodCategory.kissing ||
               i.category == TodCategory.intimate ||
               i.category == TodCategory.immersive ||
+              i.category == TodCategory.truth ||
+              i.category == TodCategory.inPerson ||
               i.category == TodCategory.longDistance;
         }
         return i.category == _selectedCategory;
@@ -117,6 +119,11 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
                     onTap: () => _switchCategory(null),
                   ),
                   _CategoryChip(
+                    label: TranslationData.translate('truth_category', lang),
+                    isSelected: _selectedCategory == TodCategory.truth,
+                    onTap: () => _switchCategory(TodCategory.truth),
+                  ),
+                  _CategoryChip(
                     label: TranslationData.translate('spicy', lang),
                     isSelected: _selectedCategory == TodCategory.spicyDare,
                     onTap: () => _switchCategory(TodCategory.spicyDare),
@@ -145,6 +152,11 @@ class _TruthOrDareScreenState extends ConsumerState<TruthOrDareScreen> {
                     label: TranslationData.translate('long_distance', lang),
                     isSelected: _selectedCategory == TodCategory.longDistance,
                     onTap: () => _switchCategory(TodCategory.longDistance),
+                  ),
+                  _CategoryChip(
+                    label: TranslationData.translate('in_person', lang),
+                    isSelected: _selectedCategory == TodCategory.inPerson,
+                    onTap: () => _switchCategory(TodCategory.inPerson),
                   ),
                 ],
               ),
